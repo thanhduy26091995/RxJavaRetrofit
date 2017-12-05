@@ -5,5 +5,6 @@ package com.hbbsolution.mproduction.utils;
  */
 
 public class AppConstants {
-    public static final String URL_CURRENT = "http://th.hbbsolution.com/";
+//    public static final String URL_CURRENT = "http://th.hbbsolution.com/";
+    public static final String URL_CURRENT = "http://a2z.hbbsolution.com/api/vi/";
 }

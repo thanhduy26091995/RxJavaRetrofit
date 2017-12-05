@@ -63,6 +63,12 @@ public class ApiClient {
                     @Override
                     public Response intercept(Chain chain) throws IOException {
                         Request original = chain.request();
+//                        Response response = chain.proceed(original);
+//
+//                        if(response.code() == 404) {
+//
+//                        }
+//
                         Request request = original.newBuilder()
                                 .addHeader("Content-Type", "application/json")
                                 .method(original.method(), original.body()).build();
@@ -76,7 +82,7 @@ public class ApiClient {
                 .baseUrl(AppConstants.URL_CURRENT)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                //.client(client)
+                .client(client)
                 .build();
         return retrofit;
     }

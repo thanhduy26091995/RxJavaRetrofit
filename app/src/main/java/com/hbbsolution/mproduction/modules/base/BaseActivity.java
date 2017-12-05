@@ -4,9 +4,11 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.hbbsolution.mproduction.R;
 import com.hbbsolution.mproduction.utils.components.InternetConnection;
+import com.hbbsolution.mproduction.utils.components.KeyHash;
 import com.hbbsolution.mproduction.utils.message_dialog.DialogResultItem;
 import com.hbbsolution.mproduction.utils.message_dialog.MessageDialogHelper;
 import com.hbbsolution.mproduction.utils.message_dialog.MessageDialogManger;
@@ -29,6 +31,7 @@ public class BaseActivity extends AppCompatActivity implements OnClickDialogList
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mMessageDialogManger = new MessageDialogManger();
+        Log.d("RESULT", KeyHash.printKeyHash(this));
     }
 
     protected void showDialogLoading(Integer dialogId, String content) {
